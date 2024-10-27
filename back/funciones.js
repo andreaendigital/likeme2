@@ -23,4 +23,22 @@ const escribirPosts = async (titulo, url, descripcion) => {
   console.log("Post Agregado");
 };
 
-module.exports = { leerPosts, escribirPosts };
+const agregarLike = async (id) => {
+  const consulta = "UPDATE posts SET likes = (likes + 1) WHERE id = $1;";
+  const values = [id];
+  const { rowCount } = await pool.query(consulta, values);
+  if (rowCount === 0) {
+    throw { code: 404, message: "el posteo no existe con el ID =" + id };
+  }
+};
+
+const borrarPost = async (id) => {
+  const consulta = "DELETE FROM posts WHERE id = $1";
+  const values = [id];
+  const { rowCount } = await pool.query(consulta, values);
+  if (rowCount === 0) {
+    throw { code: 404, message: "No existe el post con id" };
+  }
+};
+
+module.exports = { leerPosts, escribirPosts, agregarLike, borrarPost };
