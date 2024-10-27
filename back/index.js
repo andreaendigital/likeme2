@@ -1,4 +1,4 @@
-const { leerPosts, escribirPosts } = require("./funciones"); //importamos funciones
+const { leerPosts, escribirPosts, agregarLike, } = require("./funciones"); //importamos funciones
 
 const cors = require("cors"); // importamos cors
 //Habilitar los cors en el servidor utilizando el paquete de npm.
