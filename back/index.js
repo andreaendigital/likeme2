@@ -1,4 +1,4 @@
-const { leerPosts, escribirPosts, agregarLike, } = require("./funciones"); //importamos funciones
+const { leerPosts, escribirPosts, agregarLike,  borrarPost } = require("./funciones"); //importamos funciones
 
 const cors = require("cors"); // importamos cors
 //Habilitar los cors en el servidor utilizando el paquete de npm.
@@ -39,6 +39,19 @@ app.put("/posts/like/:id", async (req, res) => {
     res.status(code).send(message);
   }
 });
+
+//Ruta para borrar post
+app.delete("/post/:id", async(rea,res) => {
+  const id = rea.params.id;
+  try{
+    await borrarPost(id);
+    res.send("La película ingresada ha sido eliminada");
+  } catch ({ code, message}){
+    res.status(code).send(message);
+  }
+
+});
+
 
 
 //comprobación de conexiones y agregar muestra a bbdd -> ok
