@@ -29,4 +29,16 @@ app.post("/posts", async (req, res) => {
   res.send("El post fue agregado");
 });
 
+//Ruta dar like
+app.put("/posts/like/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    await agregarLike(id);
+    res.send("Se ha agregado un like !!");
+  } catch ({ code, message }) {
+    res.status(code).send(message);
+  }
+});
+
+
 //comprobación de conexiones y agregar muestra a bbdd -> ok
