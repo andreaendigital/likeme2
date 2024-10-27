@@ -32,6 +32,9 @@ La película / el registro se elimina al hacer click en la X:
 
 ![Captura de pantalla 2024-10-27 092851](https://github.com/user-attachments/assets/a3602424-a870-4a48-81ce-16e7dbc25658)
 
+Uso de try - catch:
+
+![Captura de pantalla 2024-10-27 094239](https://github.com/user-attachments/assets/804d0d88-9b0f-41d1-a567-7c78817dcc58)
 
 ## Construido Con 🛠️
 
