@@ -41,7 +41,7 @@ app.put("/posts/like/:id", async (req, res) => {
 });
 
 //Ruta para borrar post
-app.delete("/post/:id", async(rea,res) => {
+app.delete("/posts/:id", async(rea,res) => {
   const id = rea.params.id;
   try{
     await borrarPost(id);
